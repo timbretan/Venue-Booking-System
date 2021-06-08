@@ -1,0 +1,58 @@
+{{template "header"}}
+<body>
+{{template "memberheader" .}}
+    <div class="index-container">
+        <div class="members-main-opener">
+            <!-- sort venue -->
+            <div class="venue-sort-form">
+            <h2>Sort venues to help you make better choices!</h2>
+            <form method="GET">
+            <select name="sortcriterion" id="sortcriterion" onchange = "getSelectValue();">
+                <option value="1">From A to Z</option>
+                <option value="2">From Z to A</option>
+                <option value="3">Capacity ASC</option>
+                <option value="4">Capacity DESC</option>
+                <option value="5">Area ASC</option>
+                <option value="6">Area DESC</option>
+                <option value="7">Hourly Rate ASC</option>
+                <option value="8">Hourly Rate DESC</option>
+                <option value="9">Rating ASC</option>
+                <option value="10">Rating DESC</option>
+            </select>
+            <input type="submit" class="btn side-btn" name="sort" value="sort">
+            </div><!--.venue-sort-form -->
+            {{if (avail "Venues" .)}}
+            {{if .Venues}}
+            <div class="venue-search-results">
+                <h3>Here are all the venues under our booking system, sorted {{$.SortCrit}}:</h3>
+                <ol class="venue-search-list">
+                    {{range $element := .Venues}}
+                    <li><a href="/jh-member/venue/{{(makelink $element.Name)}}">{{(br $element.String)}}</a></li> 
+                    <hr/>
+                    {{end}}
+                </ol>
+            </div> <!-- .venue-search-results -->
+            {{end}}
+            {{end}}
+        </div> <!-- .member-main-opener -->
+    </div> <!-- .index-container-->
+    
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+<script>
+window.addEventListener('load', function(){
+    if (localStorage.pick) {
+        var sel = document.querySelector('#sortcriterion');
+        sel.value = localStorage.pick;
+    }
+});
+
+function getSelectValue(){
+    var sel = document.querySelector('#sortcriterion');
+    localStorage.pick = sel.value;
+    location.reload();
+}
+</script>
+</body>
+</html>

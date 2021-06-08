@@ -1,0 +1,143 @@
+Venue_Num,Venue_Name,Region,Capacity,Category,Room_Type,Area,Hourly_Rate,Rating,Writeup
+1,Heliseum Sports Hall,Tyrannis,200,Sports,Hall,300,250,xxx,A large sports hall with 3 badminton courts and capacity for spectators
+2,Frangipani Hall 101,Tyrannis,150,Sports,Hall,250,250,41,A large sports hall with 2 badminton courts and capacity for spectators
+3,Frangipani Hall 101,Flowerland,1000,MICE,Hall,1000,1200,3,A flower themed place. Suitable for conventions and fairs
+4,Frangipani Hall 102,Flowerland,1000,MICE,Hall,1000,1200,22,A flower themed place. Suitable for conventions and fairs
+5,Frangipani Hall 103,Flowerland,1000,MICE,Hall,1000,1200,25,A flower themed place. Suitable for conventions and fairs
+6,Frangipani Hall 104,Flowerland,1000,MICE,Hall,1000,1200,1,A flower themed place. Suitable for conventions and fairs
+7,Frangipani Hall 105,Flowerland,1000,MICE,Hall,1000,1200,2,A flower themed place. Suitable for conventions and fairs
+8,Frangipani Hall 106,Flowerland,1000,MICE,Hall,1000,1200,37,A flower themed place. Suitable for conventions and fairs
+9,Frangipani Hall 107,Flowerland,1000,MICE,Hall,1000,1200,1,A flower themed place. Suitable for conventions and fairs
+10,Frangipani Hall 108,Flowerland,2000,MICE,Hall,2000,2500,3,A flower themed place. Suitable for conventions and fairs
+11,Frangipani Hall 109,Flowerland,2000,MICE,Hall,2000,2500,35,A flower themed place. Suitable for conventions and fairs
+12,Azalea Hall 301,Flowerland,500,MICE,Hall,500,600,1,"A flower themed place. Suitable for small conventions, fairs and weddings"
+13,Azalea Hall 302,Flowerland,500,MICE,Hall,500,600,1,"A flower themed place. Suitable for small conventions, fairs and weddings"
+14,Azalea Hall 303,Flowerland,500,MICE,Hall,500,600,8,"A flower themed place. Suitable for small conventions, fairs and weddings"
+15,Azalea Hall 304,Flowerland,500,MICE,Hall,500,600,3,"A flower themed place. Suitable for small conventions, fairs and weddings"
+16,Azalea Hall 305,Flowerland,500,MICE,Hall,500,600,1,"A flower themed place. Suitable for small conventions, fairs and weddings"
+17,Azalea Hall 306,Flowerland,500,MICE,Hall,500,600,1,"A flower themed place. Suitable for small conventions, fairs and weddings"
+18,Azalea Hall 307,Flowerland,500,MICE,Hall,500,600,51,"A flower themed place. Suitable for small conventions, fairs and weddings"
+19,Azalea Hall 308,Flowerland,500,MICE,Hall,500,600,35,"A flower themed place. Suitable for small conventions, fairs and weddings"
+20,Angsana Ballroom 309,Flowerland,80,MICE,Room,90,80,10,A flower themed place. Suitable for small-scale events and exhibitions
+21,Angsana Ballroom 310,Flowerland,80,MICE,Room,90,80,19,A flower themed place. Suitable for small-scale events and exhibitions
+22,Angsana Ballroom 311,Flowerland,80,MICE,Room,90,80,1,A flower themed place. Suitable for small-scale events and exhibitions
+23,Angsana Ballroom 312,Flowerland,80,MICE,Room,90,80,4,A flower themed place. Suitable for small-scale events and exhibitions
+24,Angsana Ballroom 313,Flowerland,80,MICE,Room,90,80,1,A flower themed place. Suitable for small-scale events and exhibitions
+25,Angsana Ballroom 314,Flowerland,80,MICE,Room,90,80,1,A flower themed place. Suitable for small-scale events and exhibitions
+26,Angsana Ballroom 315,Flowerland,80,MICE,Room,90,80,18,A flower themed place. Suitable for small-scale events and exhibitions
+27,Angsana Ballroom 316,Flowerland,80,MICE,Room,90,80,35,A flower themed place. Suitable for small-scale events and exhibitions
+28,Angsana Ballroom 317,Flowerland,80,MICE,Room,90,80,1,A flower themed place. Suitable for small-scale events and exhibitions
+29,Angsana Ballroom 318,Flowerland,80,MICE,Room,90,80,1,A flower themed place. Suitable for small-scale events and exhibitions
+30,Angsana Ballroom 319,Flowerland,80,MICE,Room,90,80,28,A flower themed place. Suitable for small-scale events and exhibitions
+31,Angsana Ballroom 320,Flowerland,80,MICE,Room,90,80,80,A flower themed place. Suitable for small-scale events and exhibitions
+32,Angsana Ballroom 321,Flowerland,80,MICE,Room,90,80,47,A flower themed place. Suitable for small-scale events and exhibitions
+33,Angsana Ballroom 322,Flowerland,80,MICE,Room,90,80,2,A flower themed place. Suitable for small-scale events and exhibitions
+34,Angsana Ballroom 323,Flowerland,80,MICE,Room,90,80,3,A flower themed place. Suitable for small-scale events and exhibitions
+35,Angsana Ballroom 324,Flowerland,80,MICE,Room,90,80,1,A flower themed place. Suitable for small-scale events and exhibitions
+36,Angsana Ballroom 325,Flowerland,80,MICE,Room,90,80,1,A flower themed place. Suitable for small-scale events and exhibitions
+37,Rose Ballroom 326,Flowerland,125,MICE,Room,140,150,36,A flower themed place. Suitable for small-scale events and exhibitions
+38,Rose Ballroom 327,Flowerland,125,MICE,Room,140,150,17,A flower themed place. Suitable for small-scale events and exhibitions
+39,Rose Ballroom 328,Flowerland,125,MICE,Room,140,150,1,A flower themed place. Suitable for small-scale events and exhibitions
+40,Rose Ballroom 329,Flowerland,125,MICE,Room,140,150,24,A flower themed place. Suitable for small-scale events and exhibitions
+41,Orchid Theatre 330,Flowerland,400,Arts and Entertainment,Theatre,800,600,57,A flower themed place. Theatre to showcase films
+42,Beach Site 1,Scheveningen,16,Holiday,Sands,20,55,13,"A specially reserved beach site for this famous, busy beach"
+43,Beach Site 2,Scheveningen,16,Holiday,Sands,20,55,8,"A specially reserved beach site for this famous, busy beach"
+44,Beach Site 3,Scheveningen,16,Holiday,Sands,20,55,3,"A specially reserved beach site for this famous, busy beach"
+45,Beach Site 4,Scheveningen,16,Holiday,Sands,20,55,3,"A specially reserved beach site for this famous, busy beach"
+46,Beach Site 5,Scheveningen,24,Holiday,Sands,35,100,36,"A specially reserved beach site for this famous, busy beach"
+47,Beach Site 6,Scheveningen,24,Holiday,Sands,35,100,18,"A specially reserved beach site for this famous, busy beach"
+48,Beach Site 7,Scheveningen,30,Holiday,Sands,60,165,19,"A specially reserved beach site for this famous, busy beach"
+49,Beach Site 8,Scheveningen,40,Holiday,Sands,80,215,38,"A specially reserved beach site for this famous, busy beach"
+50,Beach Tent 1,Scheveningen,200,Holiday,Tent,125,150,23,A beach tent for public events of fun
+51,Beach Tent 2,Scheveningen,200,Holiday,Tent,125,150,43,A beach tent for public events of fun
+52,Beach Tent 3,Scheveningen,200,Holiday,Tent,125,150,7,A beach tent for public events of fun
+53,Beach Tent 4,Scheveningen,200,Holiday,Tent,125,150,44,A beach tent for public events of fun
+54,Beach Tent 5,Scheveningen,200,Holiday,Tent,150,200,84,A slightly larger beach tent for public events of fun
+55,Beach Tent 6,Scheveningen,200,Holiday,Tent,150,200,2,A slightly larger beach tent for public events of fun
+56,Beach Tent 7,Scheveningen,200,Holiday,Tent,150,200,15,A slightly larger beach tent for public events of fun
+57,Beach Tent 8,Scheveningen,200,Holiday,Tent,150,200,9,A slightly larger beach tent for public events of fun
+58,Beach Tent 9,Scheveningen,200,Holiday,Tent,150,200,1,A slightly larger beach tent for public events of fun
+59,Old Pier,Scheveningen,400,MICE,Hall,500,800,1,Former pier converted into a luxurious hall like Clifford Pier
+60,Old Warehouse 1,Scheveningen,80,MICE,Room,90,70,37,An old cargo warehouse converted into an events room
+61,Old Warehouse 2,Scheveningen,80,MICE,Room,90,70,16,An old cargo warehouse converted into an events room
+62,Old Warehouse 3,Scheveningen,80,MICE,Room,90,70,71,An old cargo warehouse converted into an events room
+63,Old Warehouse 4,Scheveningen,80,MICE,Room,90,70,59,An old cargo warehouse converted into an events room
+64,Old Warehouse 5,Scheveningen,80,MICE,Room,90,70,9,An old cargo warehouse converted into an events room
+65,Old Warehouse 6,Scheveningen,80,MICE,Room,90,70,87,An old cargo warehouse converted into an events room
+66,Circuit Zandvoort,Zandvoort,105000,Sports,Racetrack,1000000,15000,923,The famous Zandvoort F1 
+67,Majin Horsetrack,Tyrannis,50000,Sports,Racetrack,100000,8000,15,A horsetrack suitable for horse racing organisers with a well-equipped stable
+68,Film Hall 1,Telenova,500,Arts and Entertainment,Hall,1000,1250,7,A film hall capable for live broadcast
+69,Film Hall 2,Telenova,500,Arts and Entertainment,Hall,1000,1250,57,A film hall capable for live broadcast
+70,Film Hall 3,Telenova,500,Arts and Entertainment,Hall,1000,1250,2,A film hall capable for live broadcast
+71,Film Hall 4,Telenova,500,Arts and Entertainment,Hall,1000,1250,7,A film hall capable for live broadcast
+72,Film Hall 5,Telenova,500,Arts and Entertainment,Hall,1000,1250,20,A film hall capable for live broadcast
+73,Film Hall 6,Telenova,1500,Arts and Entertainment,Hall,2000,2500,3,"An upsized film hall for major events, suitable for live broadcast"
+74,Dance Studio 1,Telenova,60,Arts and Entertainment,Studio,114,240,41,A dance studio suitable for discotheque parties
+75,Dance Studio 2,Telenova,70,Arts and Entertainment,Studio,133,280,10,A dance studio suitable for discotheque parties
+76,Dance Studio 3,Telenova,80,Arts and Entertainment,Studio,152,320,6,A dance studio suitable for discotheque parties
+77,Dance Studio 4,Telenova,90,Arts and Entertainment,Studio,171,360,1,A dance studio suitable for discotheque parties
+78,Dance Studio 5,Telenova,100,Arts and Entertainment,Studio,190,400,9,A dance studio suitable for discotheque parties
+79,Dance Studio 6,Telenova,125,Arts and Entertainment,Studio,236,500,69,A dance studio suitable for discotheque parties
+80,Tanyis Concert Hall,Telenova,1000,Arts and Entertainment,Hall,1200,2500,3,A concert hall built in 1820 with world-class acoustics and hosted orchestras from worldwide
+81,Liaska Stadium,Tyrannis,25000,Sports,Stadium,60000,8000,1,Suitable for big league football matches; hosts of Liaska FC
+82,Jerome Stadium,Telenova,25000,Sports,Stadium,60000,8000,27,Suitable for big league football matches; hosts of Telenova FC
+83,Oceanic Stadium,Scheveningen,25000,Sports,Stadium,60000,8000,4,Suitable for big league football matches; hosts of Scheveningen FC
+84,Yedova Warehouse 101,Warembom,1000,MICE,Hall,2000,1200,1,Former warehouse converted into a highly reverberant hall
+85,Yedova Warehouse 102,Warembom,1000,MICE,Hall,2000,1200,18,Former warehouse converted into a highly reverberant hall
+86,Yedova Warehouse 103,Warembom,1000,MICE,Hall,2000,1200,1,Former warehouse converted into a highly reverberant hall
+87,Yedova Warehouse 104,Warembom,1000,MICE,Hall,2000,1200,22,Former warehouse converted into a highly reverberant hall
+88,Yedova Warehouse 105,Warembom,1000,MICE,Hall,2000,1200,1,Former warehouse converted into a highly reverberant hall
+89,Yedova Warehouse 106,Warembom,1000,MICE,Hall,2000,1200,7,Former warehouse converted into a highly reverberant hall
+90,River Nitty Stadium,Warembom,16000,Sports,Stadium,40000,8000,19,A historical seaside stadium suitable for big league football matches; hosts of River Nitty FC
+91,River Nitty Platform A,Warembom,1200,MICE,Floating Platform,1200,4000,11,An event space above the sea unique only to Warembom
+92,River Nitty Platform B,Warembom,1200,MICE,Floating Platform,1200,4000,11,An event space above the sea unique only to Warembom
+93,River Nitty Platform C,Warembom,1200,MICE,Floating Platform,1200,4000,93,An event space above the sea unique only to Warembom
+94,River Nitty Platform D,Warembom,1000,MICE,Floating Platform,1000,3200,47,An event space above the sea unique only to Warembom
+95,River Nitty Platform E,Warembom,1000,MICE,Floating Platform,1000,3200,2,An event space above the sea unique only to Warembom
+96,River Nitty Platform F,Warembom,600,MICE,Floating Platform,600,2250,1,An event space above the sea unique only to Warembom
+97,River Nitty Platform G,Warembom,600,MICE,Floating Platform,600,2250,10,An event space above the sea unique only to Warembom
+98,Galina Museum Arts Hall,Warembom,200,Arts and Entertainment,Hall,150,400,2,"A tall arts hall for experimental arts groups, bringing you an unusual audience experience"
+99,Circuit Tyrannis,Tyrannis,105000,Sports,Racetrack,1000000,15000,888,A racetrack for bikers and motobikers that reminds one of Sepang GP
+100,Magma Street,Tyrannis,1000,MICE,Street,5000,8000,246,"The famous street for funfairs, markets and whatever is up to your imagination"
+101,Hyacinth Street,Tyrannis,1500,MICE,Street,7500,8880,22,"The famous street for funfairs, markets and whatever is up to your imagination"
+102,Stupendor Square,Flowerland,1900,MICE,Square,10000,8000,12,Flower exhibitions love to exhibit at this space due to strong environmental fragrance
+103,Zhwmvhashjhiunl Mybdhar,Tyrannis,2000,MICE,Square,8000,6000,594,Literally means Square of the Dead Bots who fought during the Great Tyrannis War (Zhwmvhashme Bhoa)
+104,Blue Fountain,Flowerland,400,MICE,Square,1000,4000,600,"An exhibition space with statue The Flower Swordswoman after The Motherland Calls statue in Volgograd, Russia"
+105,Mithril Plaza,Warembom,1600,MICE,Square,10000,3500,625,"A large, but affordable plaza to rent for big events"
+106,Maze Park,Flowerland,200,MICE,Park,400,4000,125,"Well-esteemed, popular maze park that is friendly to everyone"
+107,Old Post Office,Goljhia,240,MICE,Room,500,1000,90,Classic old post office that did not become the philatelic museum we know today
+108,Goljhia Tower L1,Goljhia,400,MICE,Hall,800,2000,600,A dedicated MICE tower; upper levels command views of more beautiful sceneries
+109,Goljhia Tower L2,Goljhia,400,MICE,Hall,800,2000,500,A dedicated MICE tower; upper levels command views of more beautiful sceneries
+110,Goljhia Tower L3,Goljhia,400,MICE,Hall,760,2000,452,A dedicated MICE tower; upper levels command views of more beautiful sceneries
+111,Goljhia Tower L4,Goljhia,400,MICE,Room,760,2000,387,A dedicated MICE tower; upper levels command views of more beautiful sceneries
+112,Goljhia Tower L5,Goljhia,400,MICE,Room,740,2000,380,A dedicated MICE tower; upper levels command views of more beautiful sceneries
+113,Goljhia Tower L6,Goljhia,400,MICE,Room,720,2000,460,A dedicated MICE tower; upper levels command views of more beautiful sceneries
+114,Goljhia Tower L7,Goljhia,400,MICE,Room,700,2000,399,A dedicated MICE tower; upper levels command views of more beautiful sceneries
+115,Goljhia Tower L8,Goljhia,250,MICE,Room,500,2000,357,A dedicated MICE tower; upper levels command views of more beautiful sceneries
+116,Goljhia Tower L9,Goljhia,250,MICE,Room,500,2000,600,A dedicated MICE tower; upper levels command views of more beautiful sceneries
+117,Goljhia Tower L10,Goljhia,250,MICE,Room,500,2000,900,A dedicated MICE tower; upper levels command views of more beautiful sceneries
+118,Bora Tennis Court 1,Tyrannis,4,Sports,Hall,260,50,14,A well-kept tennis court in Tyrannis
+119,Bora Tennis Court 2,Tyrannis,4,Sports,Hall,260,50,40,A well-kept tennis court in Tyrannis
+120,Bora Tennis Court 3,Tyrannis,4,Sports,Hall,260,50,27,A well-kept tennis court in Tyrannis
+121,Bora Tennis Court 4,Tyrannis,4,Sports,Hall,260,50,42,A well-kept tennis court in Tyrannis
+122,Bora Tennis Court 5,Tyrannis,4,Sports,Hall,260,50,36,A well-kept tennis court in Tyrannis
+123,Bora Tennis Court 6,Tyrannis,4,Sports,Hall,260,50,40,A well-kept tennis court in Tyrannis
+124,Howo Tennis Court 1,Goljhia,4,Sports,Hall,260,50,22,This tennis court used to be owned by a real estate conglomerate in Tyrannis
+125,Howo Tennis Court 2,Goljhia,4,Sports,Hall,260,50,38,This tennis court used to be owned by a real estate conglomerate in Tyrannis
+126,Howo Tennis Court 3,Goljhia,4,Sports,Hall,260,50,22,This tennis court used to be owned by a real estate conglomerate in Tyrannis
+127,Howo Tennis Court 4,Goljhia,4,Sports,Hall,260,50,36,This tennis court used to be owned by a real estate conglomerate in Tyrannis
+128,Vnegom Sphere,Goljhia,800,Arts and Entertainment,Hall,2500,120000,894,"A highly-rated hall for its futuristic interior, highly sought after by futuristic events"
+129,Vnegom Ground Deck 101,Goljhia,300,MICE,Room,600,600,84,"Not as glorious as Vnegom Sphere, but in the same building as it"
+130,Vnegom Ground Deck 102,Goljhia,150,MICE,Room,300,300,76,"Not as glorious as Vnegom Sphere, but in the same building as it"
+131,Vnegom Ground Deck 103,Goljhia,150,MICE,Room,300,300,66,"Not as glorious as Vnegom Sphere, but in the same building as it"
+132,Vnegom Ground Deck 104,Goljhia,150,MICE,Room,300,300,52,"Not as glorious as Vnegom Sphere, but in the same building as it"
+133,Vnegom Ground Deck 105,Goljhia,150,MICE,Room,300,300,45,"Not as glorious as Vnegom Sphere, but in the same building as it"
+134,Vnegom Ground Deck 106,Goljhia,150,MICE,Room,300,300,32,"Not as glorious as Vnegom Sphere, but in the same building as it"
+135,Vnegom Basement Deck 101,Goljhia,150,MICE,Room,300,300,9,"Not as glorious as Vnegom Sphere, but in the same building as it"
+136,Vnegom Basement Deck 102,Goljhia,150,MICE,Room,300,300,3,"Not as glorious as Vnegom Sphere, but in the same building as it"
+137,Vnegom Basement Deck 103,Goljhia,150,MICE,Room,300,300,2,"Not as glorious as Vnegom Sphere, but in the same building as it"
+138,Vnegom Basement Deck 104,Goljhia,150,MICE,Room,300,300,5,"Not as glorious as Vnegom Sphere, but in the same building as it"
+139,Vnegom Basement Deck 105,Goljhia,150,MICE,Room,300,300,14,"Not as glorious as Vnegom Sphere, but in the same building as it"
+140,Vnegom Basement Deck 106,Goljhia,150,MICE,Room,300,300,16,"Not as glorious as Vnegom Sphere, but in the same building as it"
+141,Vnegom Basement Deck 107,Goljhia,150,MICE,Room,300,300,17,"Not as glorious as Vnegom Sphere, but in the same building as it"
+142,Vnegom Square,Goljhia,2500,MICE,Square,10000,120000,200,Outside Vnegom building; well-exposed to outdoor elements

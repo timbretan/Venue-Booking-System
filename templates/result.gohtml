@@ -1,0 +1,11 @@
+{{define "result"}}
+    {{if .FirstName}}
+        <h1><u>Member details</u></h1>
+        <ul>
+        <li>Name: {{.FirstName}} {{.LastName}}</li>
+        <li>Tier: {{.Tier}}</li>
+        <li>Mobile: {{.Mobile}}</li>
+        <li>Last Login: {{.LastLogin}}</li>
+        </ul>
+    {{end}}
+{{end}}

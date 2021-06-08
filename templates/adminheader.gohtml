@@ -1,0 +1,28 @@
+{{define "adminheader"}}
+<header>
+    <div class="header-inner">
+        <div class="header-left">
+            <h2><a href="/jh-admin">JUNE HOLIDAYS BOOKING SYSTEM</a></h2>
+        </div> <!-- .header-left -->
+        <div class="header-right">
+            <div class="two-rows">
+                {{if (avail "Admin" .)}}
+                <p>You are logged in as {{.Admin.FirstName}} {{.Admin.LastName}} (Username: {{.Admin.UserName}})</p>
+                {{else}}
+                <p>Logged in as {{.FirstName}} {{.LastName}} (Username: {{.UserName}})</p>
+                {{end}}
+                <nav>
+                    <ul>
+                        <!-- Add in some more links -->
+                        <li><a href="/jh-admin">Venues</a></li>
+                        <li><a href="/jh-admin-search-booking">Bookings</a></li>
+                        <li><a href="/jh-admin-search-member">Members</a></li>
+                        <li><a href="/jh-admin-view-session">Sessions</a></li>
+                        <li><a href="/jh-admin-logout">Logout</a></li>
+                    </ul>
+                </nav>
+            </div> <!-- .two-rows -->
+        </div> <!-- .header-right -->
+    </div> <!-- .header-inner -->
+</header>
+{{end}}

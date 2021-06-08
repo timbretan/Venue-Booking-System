@@ -1,0 +1,28 @@
+{{define "comparetimes"}}
+<script>
+function compareTimes() {
+    var sdsel = document.getElementById("startday");
+    var sd = sdsel.options[sdsel.selectedIndex].value;
+    var shsel = document.getElementById("starthour");
+    var sh = shsel.options[shsel.selectedIndex].value;
+    var edsel = document.getElementById("endday");
+    var ed = edsel.options[edsel.selectedIndex].value;
+    var ehsel = document.getElementById("endhour");
+    var eh = ehsel.options[ehsel.selectedIndex].value;
+
+
+    var startTime = new Date(2021, 05, sd, sh, 0, 0);
+    var endTime = new Date(2021, 05, ed, eh, 0, 0);
+    
+    if (startTime < endTime) {
+        return true
+    }
+    
+    var element = document.getElementById("date-not-correct");
+    element.classList.add("error-message");
+    element.classList.add("negative");
+    element.innerHTML = "Start date not earlier than end date";
+    return false
+}
+</script>
+{{end}}

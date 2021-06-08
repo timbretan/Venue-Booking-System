@@ -1,0 +1,57 @@
+{{template "header"}}
+<body>
+{{template "adminheader" .}}
+    
+    <div class="index-container">
+        <div class="admin-see-member-booking">
+        <h1>Member Search</h1>
+        <form method="GET" class="member-search-form">
+            <input type="text" id="member-search" name="memberid" placeholder="MemberID" 
+                required pattern="[0-9]{6}"  title="Must contain exactly 6 digits">
+            <input type="submit" value="Search" class="btn side-btn">
+        </form>
+        
+        {{- if (avail "Member" .)}}
+            {{if .Member}}
+            <h3>Member {{.Member.ID}}</h3> 
+            <p>{{.Member}}</p>
+            <h3>Bookings</h3>
+            <div class="bookings">
+            {{- if .Member.Bookings}}
+            {{range .Member.Bookings}}
+            
+                <h3>{{.BookingID}} - {{.Status}}</h3> 
+                <p class="booking">{{.Booking}}</p>
+                {{if (isnotcancelled .Status)}}
+                    <div class="edit-or-cancel">
+                    <form method="POST" action="/jh-admin-edit-booking">
+                    <input type="hidden" name="bookingid" value="{{.BookingID}}">
+                    <input type="submit" name="prepare-edit" value="Edit" class="btn side-btn">
+                    </form>
+                    {{if (ispending .Status)}}
+                    <form method="POST" action="/jh-admin-reject-booking">
+                        <input type="hidden" name="bookingid" value="{{.BookingID}}">
+                        <input type="submit" name="prepare-reject" value="Reject" class="btn side-btn">
+                    </form>
+                    {{end}}
+                    <form method="POST" action="/jh-admin-cancel-booking">
+                    <input type="hidden" name="bookingid" value="{{.BookingID}}">
+                    <input type="submit" name="prepare-cancel" value="Cancel" class="btn side-btn">
+                    </form>
+                    </div>
+                    
+                {{end}}
+                <hr/>
+            {{end}}
+            {{end}}
+            </div> <!-- .bookings -->
+            {{end}}
+        {{end}}
+        </div> <!-- .admin-see-member-booking -->
+    </div> <!-- .index-container -->
+
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

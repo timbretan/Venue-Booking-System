@@ -1,0 +1,28 @@
+{{template "header"}}
+<body>
+{{template "memberheader" .}}
+ <div class="index-container">
+    <div class="signup-form">
+        <h1>Change password</h1>
+        <h2>For {{.FirstName}} {{.LastName}} (Username: {{.UserName}})</h2>
+        <form method="POST">
+            <input type="password" id="oldcode" name="oldcode" placeholder="old password" required
+                pattern="^[a-zA-Z0-9\*\.!@#\$%\^&\(\)\{\}\[\]:;,\?/~_\+\-=\|\\]{8,}$"
+                title="Must have at least one digit, one lowercase letter, one uppercase letter and one symbol. Allowed characters: a-z, A-Z, 0-9 and *!@#$%^&(){}[]:;,.?/~_+-=|\ and at least 8 such chars">
+            <input type="password" id="code" name="code" placeholder="new password" required
+                pattern="^[a-zA-Z0-9\*\.!@#\$%\^&\(\)\{\}\[\]:;,\?/~_\+\-=\|\\]{8,}$"
+                title="Must have at least one digit, one lowercase letter, one uppercase letter and one symbol. Allowed characters: a-z, A-Z, 0-9 and *!@#$%^&(){}[]:;,.?/~_+-=|\ and at least 8 such chars">
+            <input type="password" id="confirmcode" name="confirmcode" placeholder="confirm password" required
+                pattern="^[a-zA-Z0-9\*\.!@#\$%\^&\(\)\{\}\[\]:;,\?/~_\+\-=\|\\]{8,}$"
+                title="Must have at least one digit, one lowercase letter, one uppercase letter and one symbol. Allowed characters: a-z, A-Z, 0-9 and *!@#$%^&(){}[]:;,.?/~_+-=|\ and at least 8 such chars">
+            <br>
+            <div class="event-ext-btn">
+                <input type="submit" value="Save Password" class="btn">
+            </div>
+        </form>
+    </div> <!-- of .signup-form -->
+</div> <!-- of .index-container-->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

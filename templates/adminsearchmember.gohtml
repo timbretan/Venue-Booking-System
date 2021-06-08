@@ -1,0 +1,36 @@
+{{template "header"}}
+<body>
+{{template "adminheader" .}}
+    <div class="index-container">
+        <div class="admin-main-opener">
+            
+            <h1>Member Search</h1>
+            <form method="POST" class="member-search-form">
+                <input type="text" id="member-search" name="memberid" placeholder="MemberID" 
+                    required pattern="[0-9]{6}[ ]?"  title="Must contain exactly 6 digits">
+                <input type="submit" value="Search" class="btn side-btn">
+            </form>
+            
+            {{- if (avail "Member" .)}}
+                {{if .Member}}
+                <h3>Member {{.Member.ID}}</h3> 
+                <p>{{.Member}}</p>
+                <div class="edit-or-cancel">
+                    <form method="GET" action="/jh-admin-see-booking">
+                        <input type="hidden" name="memberid" value="{{.Member.ID}}">
+                        <input type="submit" value="See Its Bookings" class="btn side-btn">
+                    </form>
+                    <form method="POST" action="/jh-admin-delete-member">
+                        <input type="hidden" name="memberid" value="{{.Member.ID}}">
+                        <input type="submit" value="Delete Member" class="btn side-btn">
+                    </form>
+                </div> <!-- .edit-or-cancel -->
+                {{end}}
+            {{end}}
+        </div> <!-- .admin-main-opener -->
+    </div> <!-- .index-container-->
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

@@ -1,0 +1,40 @@
+{{template "header"}}
+<body>
+{{template "memberheader" .}}
+    <div class="index-container">
+        <div class="members-main-opener">
+        {{if (avail "Member" .)}}
+            <h1>Welcome, {{.Member.FirstName}} {{.Member.LastName}}! Start booking a venue now!</h1>
+            {{else}}
+            <h1>Welcome, {{.FirstName}} {{.LastName}}! Start booking a venue now!</h1>
+            {{end}}
+        {{template "venuesearchform"}}
+        <br/>
+        {{if (avail "Venues" .)}}
+            <div class="venue-search-results">
+                {{if .GotVenue}}
+                <p>We found the venue for you:</p>
+                <ul class="venue-search-list">
+                    {{range $element := .Venues}}
+                    <li><a href="/jh-member/venue/{{(makelink $element)}}">{{$element}}</a></li> 
+                    {{end}}
+                </ul>
+                {{else}}
+                <p>We find similar matches to your query:</p>
+                <ul class="venue-search-list">
+                    {{range $element := .Venues}}
+                    <li><a href="/jh-member/venue/{{(makelink $element)}}">{{$element}}</a></li>
+                    {{end}}
+                </ul>
+                <p>No results? Shorten your search term.</p>
+                {{end}}
+            </div> <!-- .venue-search-results -->
+        {{end}}
+        </div> <!-- .member-main-opener -->
+    </div> <!-- .index-container-->
+    
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

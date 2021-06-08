@@ -1,0 +1,63 @@
+{{template "header"}}
+<body>
+{{template "memberheader" .}}
+    <div class="index-container">
+        <div class="member-profile">
+            <h1>Your profile:</h1>
+            {{if .UserName}}
+            <table>
+            <tr>
+                <th>Field</th>
+                <th>Info</th>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td>{{.UserName}}</td>
+            </tr>
+            <tr>
+                <td>MemberID</td>
+                <td>{{.ID}}</td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td>{{.FirstName}}</td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>{{.LastName}}</td>
+            </tr>
+            <tr>
+                <td>Tier</td>
+                <td>{{.Tier}}</td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td>{{.Mobile}}</td>
+            </tr>
+            <tr>
+                <td>Member Since</td>
+                <td>{{.Start.Format "02-01-2006 (Mon) 15:04:05 UTC"}}</td>
+            </tr>
+            <tr>
+                <td>Last Login</td>
+                <td>{{.LastLogin.Format "02-01-2006 (Mon) 15:04:05 UTC"}}</td>
+            </tr>
+            </table>
+            {{end}}
+            
+            <br/>
+            <div class="event-ext-btn">
+                <a href="/jh-member-profile-edit" class="btn">Edit Profile</a>
+            </div>
+            <br/>
+            <br/>
+            <div class="event-ext-btn">
+                <a href="/jh-member-code-change" class="btn">Change Password</a>
+            </div>
+        </div>
+    </div>
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

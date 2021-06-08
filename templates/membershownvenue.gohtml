@@ -1,0 +1,180 @@
+{{template "header"}}
+<body>
+{{template "memberheader" .}}
+    <div class="venue-showcase">
+        <!--{{template "venuesearchform"}}-->
+        {{if .Booking}}
+        <div class="booking-success">
+            <p>We have received your booking. Details:</p>
+            <div class="booking-details">
+                <p class="booking">{{.Booking}}</p>
+            </div> <!-- booking-details -->
+            <div class="booking-id">
+                <p>
+                Copy your bookingID for reference:
+                    <strong>{{.Booking.BookingID}}</strong>
+                </p>
+            </div>  <!-- booking-id -->
+            <p>Owing to high server load, approval takes 3 working days.
+            You will be notified whether your booking is approved.</p>
+        </div> <!-- .booking-success -->
+        {{end}}
+            {{- if (avail "Venue" .)}}
+            <br/>
+            <p>{{.Venue.Venue}}</p>
+            <h2>Times Already Booked:</h2>
+            <ul class="time-list">
+            {{range $ab := .Venue.ApprovedBookings}}
+                <li>{{$ab.StartTime.Format "02-01-2006 (Mon) 15:04"}} - {{$ab.EndTime.Format "02-01-2006 (Mon) 15:04"}}</li>
+            {{end}}
+            </ul>
+        {{end}}
+        <p>NB: Booking slots are hourly.</p>
+        <p>You may book a slot that has been occupied, in case the other person cancels its booking. However, all bookings still have to be approved by admin.</p>
+        {{if not .Booking}}
+        <div class="show-book-form">
+            <form method="POST"  onsubmit="return compareTimes()" class="venue-book-form">
+            <input type="hidden" name="venue" value="{{.Venue.Name}}">
+            <label for="startday starthour">Booking start</label>
+            <select name="startday" id="startday">
+                    <option value="-1" disabled>---Day---</option>
+                    <option value="01">1 Jun 2021</option>
+                    <option value="02">2 Jun 2021</option>
+                    <option value="03">3 Jun 2021</option>
+                    <option value="04">4 Jun 2021</option>
+                    <option value="05">5 Jun 2021</option>
+                    <option value="06">6 Jun 2021</option>
+                    <option value="07">7 Jun 2021</option>
+                    <option value="08">8 Jun 2021</option>
+                    <option value="09">9 Jun 2021</option>
+                    <option value="10">10 Jun 2021</option>
+                    <option value="11">11 Jun 2021</option>
+                    <option value="12">12 Jun 2021</option>
+                    <option value="13">13 Jun 2021</option>
+                    <option value="14">14 Jun 2021</option>
+                    <option value="15">15 Jun 2021</option>
+                    <option value="16">16 Jun 2021</option>
+                    <option value="17">17 Jun 2021</option>
+                    <option value="18">18 Jun 2021</option>
+                    <option value="19">19 Jun 2021</option>
+                    <option value="20">20 Jun 2021</option>
+                    <option value="21">21 Jun 2021</option>
+                    <option value="22">22 Jun 2021</option>
+                    <option value="23">23 Jun 2021</option>
+                    <option value="24">24 Jun 2021</option>
+                    <option value="25">25 Jun 2021</option>
+                    <option value="26">26 Jun 2021</option>
+                    <option value="27">27 Jun 2021</option>
+                    <option value="28">28 Jun 2021</option>
+                    <option value="29">29 Jun 2021</option>
+                    <option value="30">30 Jun 2021</option>
+            </select>
+            <select name="starthour" id="starthour">
+                    <option value="-1" disabled>---Hour---</option>
+                    <option value="00">0:00</option>
+                    <option value="01">1:00</option>
+                    <option value="02">2:00</option>
+                    <option value="03">3:00</option>
+                    <option value="04">4:00</option>
+                    <option value="05">5:00</option>
+                    <option value="06">6:00</option>
+                    <option value="07">7:00</option>
+                    <option value="08">8:00</option>
+                    <option value="09">9:00</option>
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+            </select>
+            <br/>
+            <label for="endday endhour">Booking end</label>
+            <select name="endday" id="endday">
+                    <option value="-1" disabled>---Day---</option>
+                    <option value="01">1 Jun 2021</option>
+                    <option value="02">2 Jun 2021</option>
+                    <option value="03">3 Jun 2021</option>
+                    <option value="04">4 Jun 2021</option>
+                    <option value="05">5 Jun 2021</option>
+                    <option value="06">6 Jun 2021</option>
+                    <option value="07">7 Jun 2021</option>
+                    <option value="08">8 Jun 2021</option>
+                    <option value="09">9 Jun 2021</option>
+                    <option value="10">10 Jun 2021</option>
+                    <option value="11">11 Jun 2021</option>
+                    <option value="12">12 Jun 2021</option>
+                    <option value="13">13 Jun 2021</option>
+                    <option value="14">14 Jun 2021</option>
+                    <option value="15">15 Jun 2021</option>
+                    <option value="16">16 Jun 2021</option>
+                    <option value="17">17 Jun 2021</option>
+                    <option value="18">18 Jun 2021</option>
+                    <option value="19">19 Jun 2021</option>
+                    <option value="20">20 Jun 2021</option>
+                    <option value="21">21 Jun 2021</option>
+                    <option value="22">22 Jun 2021</option>
+                    <option value="23">23 Jun 2021</option>
+                    <option value="24">24 Jun 2021</option>
+                    <option value="25">25 Jun 2021</option>
+                    <option value="26">26 Jun 2021</option>
+                    <option value="27">27 Jun 2021</option>
+                    <option value="28">28 Jun 2021</option>
+                    <option value="29">29 Jun 2021</option>
+                    <option value="30">30 Jun 2021</option>
+            </select>
+            <select name="endhour" id="endhour">
+                    <option value="-1" disabled>---Hour---</option>
+                    <option value="00">0:00</option>
+                    <option value="01">1:00</option>
+                    <option value="02">2:00</option>
+                    <option value="03">3:00</option>
+                    <option value="04">4:00</option>
+                    <option value="05">5:00</option>
+                    <option value="06">6:00</option>
+                    <option value="07">7:00</option>
+                    <option value="08">8:00</option>
+                    <option value="09">9:00</option>
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+            </select>
+            <br/>
+            <input type="submit" value="book now" class="btn side-btn">
+            </form>
+            <p id="date-not-correct"></p>
+        </div> <!-- .show-book-form -->
+        {{end}}
+        
+    </div> <!-- .venue-showcase-->
+    <br/>
+    <br/>
+</div> <!-- wrapper class -->
+{{template "footer"}}
+<!-- Note to Tim: If you use "/xx/xx/" with an ending slash behind,
+your stylesheet link needs to change accordingly! -->
+<link href="../../css/style.css" type="text/css" rel="stylesheet">
+<!-- prevents user from refreshing -->
+{{template "disablerefresh"}}
+{{template "comparetimes"}}
+</body>
+</html>

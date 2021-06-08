@@ -1,0 +1,33 @@
+{{template "header"}}
+<body>
+{{template "memberheader" .}}
+<div class="index-container">
+    <div class="member-profile-edit">
+        <h1>Amend your particulars</h1>
+        <form method="POST">
+            <label for="firstname">First Name: </label>
+            <input type="text" id="firstname" name="firstname" value={{.FirstName}} required
+            pattern="[A-Za-z]+" title="Only letters">
+            <br>
+            <label for="lastname">Last Name: </label>
+            <input type="text" id="lastname" name="lastname" value={{.LastName}} required
+            pattern="[A-Za-z]+" title="Only letters">
+            <br>
+            <label>Tier: {{.Tier}}</label>
+            <br>
+            <label for="mobile">Mobile (8-digit num): </label>
+            <input type="text" id="mobile" name="mobile" value={{.Mobile}} required
+            pattern="[89][0-9]{7}" title="Only Singapore mobile numbers accepted">
+            <br>
+            <br>
+            <div class="event-ext-btn">
+                <input type="submit" value="Save Profile" class="btn">
+            </div>
+        </form>
+        
+    </div> <!-- of .signup-form -->
+</div> <!-- of .index-container-->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

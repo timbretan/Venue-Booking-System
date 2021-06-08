@@ -1,0 +1,36 @@
+{{template "header"}}
+<body>
+{{template "memberheader" .}}
+    <div class="index-container">
+        <div class="member-history">
+            <h1>Your booking history:</h1>
+            <div class="bookings">
+            {{if .Bookings}}
+            {{range .Bookings}}
+                {{if (isnotcancelled .Status)}}
+                    <h3>{{.BookingID}} - {{.Status}}</h3> 
+                    <p class="booking">{{.Booking}}</p>
+                    <div class="edit-or-cancel">
+                    <form method="POST" action="/jh-member-edit-booking">
+                    <input type="hidden" name="bookingid" value="{{.BookingID}}">
+                    <input type="submit" name="prepare-edit" value="Edit" class="btn side-btn">
+                    </form>
+                    <form method="POST" action="/jh-member-cancel-booking">
+                    <input type="hidden" name="bookingid" value="{{.BookingID}}">
+                    <input type="submit" name="prepare-cancel" value="Cancel" class="btn side-btn">
+                    </form>
+                    </div>
+                    <hr/>
+                {{end}}
+            {{end}}
+            {{end}}
+            </div> <!-- .bookings -->
+            <br/>
+            
+        </div> <!-- .member-history -->
+    </div> <!-- .index-container -->
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

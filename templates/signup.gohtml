@@ -1,0 +1,37 @@
+{{template "header"}}
+<body>
+<div class="index-container">
+    <div>
+        <h1>Welcome to June Holidays Booking System! Sign up to begin.</h1>
+        <form method="POST" class="signup-form">
+            <input type="text" id="firstname" name="firstname"  placeholder="First Name" required 
+            pattern="[A-Za-z]+" title="Only letters">
+            <input type="text" id="lastname" name="lastname"  placeholder="Last Name" required 
+            pattern="[A-Za-z]+" title="Only letters">
+            <br>
+            <select name="tier" class="tier" required>
+                <option value="-1" disabled>---Membership Tier---</option>
+                <option value="0">Bronze</option>
+                <option value="1">Silver</option>
+                <option value="2">Gold</option>
+                <option value="3">Diamond</option>
+            </select>
+            <input type="text" id="mobile" name="mobile" placeholder="Mobile" required 
+            pattern="[89][0-9]{7}" title="Only Singapore mobile numbers accepted">
+            <br>
+            <input type="text" id="username" name="username"  placeholder="username" required
+            pattern="[A-Za-z]+" title="Only letters and numbers">
+            <input type="password" id="code" name="code" placeholder="password" required
+                pattern="^[a-zA-Z0-9\*\.!@#\$%\^&\(\)\{\}\[\]:;,\?/~_\+\-=\|\\]{8,}$"
+                title="Must have at least one digit, one lowercase letter, one uppercase letter and one symbol. Allowed characters: a-z, A-Z, 0-9 and *!@#$%^&(){}[]:;,.?/~_+-=|\ and at least 8 chars">
+            <br>
+            <div class="event-ext-btn">
+            <input type="submit" value="Sign up" class="btn">
+            </div>
+        </form><!-- of .signup-form -->
+    </div> 
+</div> <!-- of .index-container-->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

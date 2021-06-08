@@ -1,0 +1,21 @@
+{{template "header"}}
+<body>
+{{template "memberheader" .}}
+    <div class="index-container">
+        <div class="admin-delete-member">
+            <h1>Confirm delete member {{.Member.ID}}?</h1>
+            <p>{{.Member}}</p>
+            <div class="yes-no">
+            <!-- HTML, how come you no form method DELETE?! -->
+            <form method="POST" action="/jh-admin-delete-member-2">
+                <input type="hidden" name="memberid" value="{{.Member.ID}}">
+                <input type="submit" name="delete" value="yes" class="btn">
+                <input type="submit" name="delete" value="no" class="btn">
+            </form>
+            </div><!-- .yes-no -->
+    </div> <!-- .index-container -->
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

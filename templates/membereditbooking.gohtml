@@ -1,0 +1,191 @@
+{{template "header"}}
+<body>
+{{template "memberheader" .}}
+    <div class="index-container">
+        <div class="member-edit-booking">
+            <h2>Booking to amend:</h2>
+            <p>{{.Booking}}</p>
+            <div class="show-book-form">
+            <h2>Change booking to:</h2>
+                <form method="POST" action="/jh-member-edit-booking" class="venue-book-form">
+
+                <!--input-hidden: bookingID -->
+                <input type="hidden" name="bookingid" value="{{.Booking.BookingID}}">
+                
+                <!-- edit venue to book, by listing all venues -->
+                <select name="newvenue" id="newvenue">
+                    <option value="-1" disabled>---Venue---</option>
+                    <!-- new venue just selected -->
+                    {{if .NewVenue}}
+                    <option value="{{.NewVenue.Name}}">{{.NewVenue.Name}} (New)</option>
+                    {{end}}
+                    <!-- old venue -->
+                    <option value="{{.Booking.Venue}}">{{.Booking.Venue}} (Prior)</option>
+                    <!-- all other venues -->
+                    {{range .AllVenues}}
+                    <option value="{{.Name}}">{{.Name}}</option>
+                    {{end}}
+                </select>
+                <input type="submit" value="See availability" class="btn side-btn">
+                </form>
+                <!-- after loading venue desc, then show venue info, start and end time options -->
+                <!-- list venue desc -->
+                {{if .NewVenue}}
+                <div class="edit-venue-showcase">
+                    <p>{{.NewVenue.Venue}}</p>
+                    <h2>Times Already Booked:</h2>
+                    <ul class="venue-search-list">
+                    {{range $times := .NewVenue.TimesBooked}}
+                        <li>{{index $times 0}} - {{index $times 1}}</li>
+                    {{end}}
+                    </ul>
+                </div> <!-- .venue-showcase -->
+                
+                <form method="POST" onsubmit="return compareTimes()" action="/jh-member-edit-booking-2" class="venue-book-form">    
+                    <!-- bookingID -->
+                    <input type="hidden" name="bookingid" value="{{.Booking.BookingID}}">
+                    <!-- chosen venue stored for this form -->
+                    <input type="hidden" name="venue" value="{{.NewVenue.Name}}">
+                    <!-- edit start and end times -->
+                    <label for="startday starthour">Booking start</label>
+                    <select name="startday" id="startday">
+                        <option value="-1" disabled>---Day---</option>
+                        <option value="{{.Booking.StartTime.Day}}">{{.Booking.StartTime.Format "2 Jan 2006"}} (Prior)</option>
+                        <option value="01">1 Jun 2021</option>
+                        <option value="02">2 Jun 2021</option>
+                        <option value="03">3 Jun 2021</option>
+                        <option value="04">4 Jun 2021</option>
+                        <option value="05">5 Jun 2021</option>
+                        <option value="06">6 Jun 2021</option>
+                        <option value="07">7 Jun 2021</option>
+                        <option value="08">8 Jun 2021</option>
+                        <option value="09">9 Jun 2021</option>
+                        <option value="10">10 Jun 2021</option>
+                        <option value="11">11 Jun 2021</option>
+                        <option value="12">12 Jun 2021</option>
+                        <option value="13">13 Jun 2021</option>
+                        <option value="14">14 Jun 2021</option>
+                        <option value="15">15 Jun 2021</option>
+                        <option value="16">16 Jun 2021</option>
+                        <option value="17">17 Jun 2021</option>
+                        <option value="18">18 Jun 2021</option>
+                        <option value="19">19 Jun 2021</option>
+                        <option value="20">20 Jun 2021</option>
+                        <option value="21">21 Jun 2021</option>
+                        <option value="22">22 Jun 2021</option>
+                        <option value="23">23 Jun 2021</option>
+                        <option value="24">24 Jun 2021</option>
+                        <option value="25">25 Jun 2021</option>
+                        <option value="26">26 Jun 2021</option>
+                        <option value="27">27 Jun 2021</option>
+                        <option value="28">28 Jun 2021</option>
+                        <option value="29">29 Jun 2021</option>
+                        <option value="30">30 Jun 2021</option>
+                    </select>
+                    <select name="starthour" id="starthour">
+                        <option value="-1" disabled>---Hour---</option>
+                        <option value="{{.Booking.StartTime.Hour}}">{{.Booking.StartTime.Hour}}:00 (Prior)</option>
+                        <option value="00">0:00</option>
+                        <option value="01">1:00</option>
+                        <option value="02">2:00</option>
+                        <option value="03">3:00</option>
+                        <option value="04">4:00</option>
+                        <option value="05">5:00</option>
+                        <option value="06">6:00</option>
+                        <option value="07">7:00</option>
+                        <option value="08">8:00</option>
+                        <option value="09">9:00</option>
+                        <option value="10">10:00</option>
+                        <option value="11">11:00</option>
+                        <option value="12">12:00</option>
+                        <option value="13">13:00</option>
+                        <option value="14">14:00</option>
+                        <option value="15">15:00</option>
+                        <option value="16">16:00</option>
+                        <option value="17">17:00</option>
+                        <option value="18">18:00</option>
+                        <option value="19">19:00</option>
+                        <option value="20">20:00</option>
+                        <option value="21">21:00</option>
+                        <option value="22">22:00</option>
+                        <option value="23">23:00</option>
+                    </select>
+                    <br/>
+                    <label for="endday endhour">Booking end</label>
+                    <select name="endday" id="endday">
+                        <option value="-1" disabled>---Day---</option>
+                        <option value="{{.Booking.EndTime.Day}}">{{.Booking.EndTime.Format "2 Jan 2006"}} (Prior)</option>
+                        <option value="01">1 Jun 2021</option>
+                        <option value="02">2 Jun 2021</option>
+                        <option value="03">3 Jun 2021</option>
+                        <option value="04">4 Jun 2021</option>
+                        <option value="05">5 Jun 2021</option>
+                        <option value="06">6 Jun 2021</option>
+                        <option value="07">7 Jun 2021</option>
+                        <option value="08">8 Jun 2021</option>
+                        <option value="09">9 Jun 2021</option>
+                        <option value="10">10 Jun 2021</option>
+                        <option value="11">11 Jun 2021</option>
+                        <option value="12">12 Jun 2021</option>
+                        <option value="13">13 Jun 2021</option>
+                        <option value="14">14 Jun 2021</option>
+                        <option value="15">15 Jun 2021</option>
+                        <option value="16">16 Jun 2021</option>
+                        <option value="17">17 Jun 2021</option>
+                        <option value="18">18 Jun 2021</option>
+                        <option value="19">19 Jun 2021</option>
+                        <option value="20">20 Jun 2021</option>
+                        <option value="21">21 Jun 2021</option>
+                        <option value="22">22 Jun 2021</option>
+                        <option value="23">23 Jun 2021</option>
+                        <option value="24">24 Jun 2021</option>
+                        <option value="25">25 Jun 2021</option>
+                        <option value="26">26 Jun 2021</option>
+                        <option value="27">27 Jun 2021</option>
+                        <option value="28">28 Jun 2021</option>
+                        <option value="29">29 Jun 2021</option>
+                        <option value="30">30 Jun 2021</option>
+                    </select>
+                    <select name="endhour" id="endhour">
+                        <option value="-1" disabled>---Hour---</option>
+                        <option value="{{.Booking.EndTime.Hour}}">{{.Booking.EndTime.Hour}}:00 (Prior)</option>
+                        <option value="00">0:00</option>
+                        <option value="01">1:00</option>
+                        <option value="02">2:00</option>
+                        <option value="03">3:00</option>
+                        <option value="04">4:00</option>
+                        <option value="05">5:00</option>
+                        <option value="06">6:00</option>
+                        <option value="07">7:00</option>
+                        <option value="08">8:00</option>
+                        <option value="09">9:00</option>
+                        <option value="10">10:00</option>
+                        <option value="11">11:00</option>
+                        <option value="12">12:00</option>
+                        <option value="13">13:00</option>
+                        <option value="14">14:00</option>
+                        <option value="15">15:00</option>
+                        <option value="16">16:00</option>
+                        <option value="17">17:00</option>
+                        <option value="18">18:00</option>
+                        <option value="19">19:00</option>
+                        <option value="20">20:00</option>
+                        <option value="21">21:00</option>
+                        <option value="22">22:00</option>
+                        <option value="23">23:00</option>
+                    </select>
+                    <br/>
+                    <p>WARNING: Please double-check your edits. Editing an "Approved" booking reverts the booking to "Pending" status, and you have to wait for 3 working days.</p>
+                    <input type="submit" name="edit" value="edit booking" class="btn side-btn">
+                </form>
+                <p id="date-not-correct"></p>
+                {{end}} <!-- if .NewVenue -->
+        </div> <!-- .show-book-form -->
+
+   </div> <!-- .index-container-->
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+{{template "comparetimes"}}
+</body>
+</html>

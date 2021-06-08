@@ -1,0 +1,49 @@
+{{template "header"}}
+<body>
+{{template "adminheader" .}}
+    <div class="index-container">
+        <div class="admin-view-session">
+            
+            <h1>List of Active Admin Sessions</h1>
+            <ol>
+            <!-- admin sessions -->
+            {{ range $key, $value := .AllAdminSessions.LoadAll }}
+                <li>
+                    {{if eq $.ReqLocation $value.Location}}
+                    <p>You are logged in as:</p>
+                    {{end}}
+                    {{ (br $value.String) }}
+                </li>
+                <br/>
+                <form method="POST" action="/jh-admin-delete-session">
+                    <input type="hidden" name="group" value="a">
+                    <input type="hidden" name="sessionid" value="{{$key}}">
+                    <input type="submit" name="prepare-cancel" value="Cancel Session" class="btn side-btn">
+                </form>
+                <hr/>
+            {{ end }}
+            </ol>
+            <!-- member sessions -->
+            <h1>List of Active Member Sessions</h1>
+            <ol>
+            <!-- admin sessions -->
+            {{ range $key, $value := .AllMemberSessions.LoadAll }}
+                <li>
+                    {{ (br $value.String) }}
+                </li>
+                <br/>
+                <form method="POST" action="/jh-admin-delete-session">
+                    <input type="hidden" name="group" value="b">
+                    <input type="hidden" name="sessionid" value="{{$key}}">
+                    <input type="submit" name="prepare-cancel" value="Cancel Session" class="btn side-btn">
+                </form>
+                <hr/>
+            {{ end }}
+            </ol>
+        </div>
+    </div>
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

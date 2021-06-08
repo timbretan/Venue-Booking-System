@@ -1,0 +1,479 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom, #111, #555);
+    color: #ddd;
+    font-family: "Lato", "Helvetica", "Arial", "sans-serif";
+    text-align: center;
+}
+
+input, select, textarea, button{font-family:inherit; border: inherit;}
+
+p, li {
+    font-size: 18px;
+}
+
+ol li {
+    padding: 0 25px;
+}
+
+a {
+    color: rgb(218, 218, 80);
+    text-decoration: none;
+}
+
+label {
+    font-size: 2.5vh;
+    vertical-align: super;
+    /*display: table-cell;*/
+}
+
+input:not([type=submit]), select, option {
+    font-size: 36px;
+    margin: 5px 0;
+    background: thistle;
+    width: 300px;
+    vertical-align: top;
+}
+
+input:invalid {
+    border: 2px dashed red;
+}
+
+input:valid {
+    border: 2px solid black;
+}
+
+::placeholder {
+    color: rgb(31, 13, 13);
+    opacity: 0.5;
+    font-size: 75%;
+    background: thistle;
+}
+
+::-moz-placeholder {
+    color: rgb(31, 13, 13);
+    opacity: 0.5;
+    font-size: 75%;
+    background: thistle;
+}
+
+::-webkit-placeholder {
+    color: rgb(31, 13, 13);
+    opacity: 0.5;
+    font-size: 75%;
+    background: thistle;
+}
+
+
+input[type=radio] {
+    border: 0px;
+    width: 2%;
+    height: 2em;
+    font-size: 1.5vh;
+    margin: 5px 5px 5px 13px;
+    -ms-transform: scale(1.4); /* IE 9 */
+    -webkit-transform: scale(1.4); /* Chrome, Safari, Opera */
+    transform: scale(1.4);
+    vertical-align: middle;
+}
+
+.error-message {
+    padding: 10px 10px 17px 10px;
+}
+
+.pop-up {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 5px 0;
+}
+
+/* happens in order to correct situations when
+showSuccessOnTop or ShowErrorOnTop do not incl.
+ <p> inside their <div class="pop-up positive/negative"> */
+.pop-up p {
+    margin: 5px 0;
+}
+
+.positive {
+    background-color:rgb(80, 218, 80);
+    color: #333;
+}
+
+.negative {
+    background-color:rgb(218, 80, 80);
+    color: #ccc;
+}
+
+
+.event-ext-btn {
+    text-align: center;
+}
+
+.btn {
+    border-radius: 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff!important;
+    letter-spacing: 1px;
+    border-color: rgba(0, 0, 0, 0.9);
+    border-bottom-width: 8px;
+    border-bottom-color: rgba(0, 0, 0, 0.35);
+    padding: 10px 18px 17px 18px;
+    background-image: linear-gradient(to bottom, #f00, rgb(218, 80, 80));
+    margin: 20px 0;
+}
+
+.side-btn {
+    display: inline-block;
+    margin: 5px 0;
+}
+
+/* for re-direct messages */
+.redirect-message {
+    padding: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* for index.gohtml */
+.index-container {
+    padding: 2em;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
+
+div.form, .login-form {
+    display: block;
+    text-align: center;
+}
+
+.member-login, .admin-login {
+    display: inline-block;
+    margin: auto;
+    text-align: left;
+    position: relative;
+    max-width: 70%;
+}
+
+.login-form {
+    text-align: center;
+}
+
+.container {
+    display: inline-block;
+    margin: auto;
+    text-align: left;
+    position: relative;
+    top: 35vh;
+    max-width: 70%;
+}
+
+/* for signup.gohtml */
+.signup-form {
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    max-width: 80vw;
+}
+
+/* for members-only area */
+header {
+    background: 0 0;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    max-width: 70%
+}
+
+header .header-inner {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 2.8rem 0;
+}
+
+header .header-left {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: 2rem;
+    max-width: 15vw;
+    padding: 0;
+    text-align: left;
+    font-size: 2vh;
+}
+
+header .header-left a {
+    color: #aaa;
+}
+
+header .header-right {
+    align-items: center;
+    display: flex;
+}
+
+header .header-right .two-rows {
+    display: grid;
+}
+
+header .header-right .two-rows p {
+    text-align: right;
+}
+
+
+nav {
+    display: block;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    font-size: 3vh;
+    font-weight: 500;
+    letter-spacing: -.0277em;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: -.6rem 0 0 -2.5rem;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+nav ul li {
+    font-size: inherit;
+    line-height: 0.75;
+    position: relative;
+    margin: .8rem 0 0 1.5rem;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(18, 80, 80);
+    color: white;
+    text-align: center;
+}
+
+.footer-text {
+    display: inline-block;
+    max-width: 80%;
+}
+
+.footer-text p {
+    font-size: 80%;
+}
+
+/* for any yes-no questions */
+.yes-no input {
+    margin: 0 20px;
+}
+
+/* for both adminmain.gohtml and membermain.gohtml */
+.venue-search-form {
+    display: inline-block;
+    margin: auto;
+    text-align: left;
+    position: relative;
+    max-width: 80vw;
+}
+
+input[id="venue-search"] {
+    width: 45vw;
+}
+
+/* for membermain.gohtml */
+/* for adminmain.gohtml */
+.members-main-opener,
+.admin-main-opener {
+    padding-bottom: 100px;
+}
+
+.venue-search-results {
+    text-align: left;
+}
+
+.venue-search-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.venue-search-list li a {
+    color:rgb(218, 218, 80)
+}
+
+.time-list {
+    text-transform: uppercase;
+    font-family: "Ubuntu Mono", "Consolas", monospaced;
+    list-style: none;
+    padding-left: 0;
+}
+
+.bookings-list {
+    font-family: "Ubuntu Mono", "Consolas", monospaced;
+    padding-left: 0;
+}
+
+.booking {
+    font-family: "Ubuntu Mono", "Consolas", monospaced;
+}
+
+
+/* for membershownvenue.gohtml */
+.venue-showcase {
+    padding: 2em;
+    padding-bottom: 100px;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+    text-align: left;
+    max-width: 80%;
+}
+
+.show-book-form {
+    text-align: center
+}
+
+.venue-book-form {
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    max-width: 80vw;
+}
+
+.booking-details {
+    text-align: center
+}
+
+.booking-id {
+    text-align: center;
+}
+
+.booking-id p{
+    font-size: 150%;
+}
+
+/* for memberbrowsevenue.gohtml */
+select[name="sortcriterion"] {
+    width: 400px;
+}
+
+/* for membereditbooking.gohtml */
+/* for admineditbooking.gohtml */
+/* for adminseememberbooking.gohtml */
+.member-edit-booking,
+.admin-edit-booking,
+.admin-see-member-booking {
+    padding-bottom: 100px;
+}
+
+.edit-venue-showcase {
+    padding: 2em 10%;
+    text-align: left;
+}
+
+
+/* for memberprofile.gohtml */
+.member-profile {
+    display: block;
+    text-align: left;
+}
+
+.member-profile table {
+    font-size: 20px;
+}
+
+.member-profile table tr td:first-child {
+    padding-right: 10px;
+}
+
+/* for memberprofileedit.gohtml */
+.member-profile-edit {
+    display: inline-block;
+    margin: auto;
+    text-align: left;
+    position: relative;
+    max-width: 80vw;
+}
+
+/* for memberhistory.gohtml (booking history) */
+.member-history {
+    display: block;
+    text-align: left;
+    padding-bottom: 100px;
+}
+
+.bookings {
+    text-align: left;
+}
+
+.edit-or-cancel {
+    text-align: center;
+}
+
+.edit-or-cancel form {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.edit-or-cancel a {
+    padding: 10px 2vw;
+}
+
+
+/* for adminsearchbooking.gohtml */
+/* for adminsearchmember.gohtml */
+input[id="booking-search"],
+input[id="member-search"] {
+    width: 180px;
+}
+
+/* for adminprocessbooking.gohtml */
+.admin-process-booking {
+    padding-bottom: 100px;
+    text-align: left;
+}
+
+.admin-process-booking .ask-process-waitlist {
+    /*padding-bottom: 100px;*/
+    text-align: center;
+}
+
+/* for adminviewsession.gohtml */
+.admin-view-session {
+    display: block;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.admin-view-session ol {
+    text-align: left;
+}
+
+.admin-view-session ol form {
+    text-align: center;
+}

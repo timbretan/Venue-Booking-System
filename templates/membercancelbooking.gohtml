@@ -1,0 +1,19 @@
+{{template "header"}}
+<body>
+{{template "memberheader" .}}
+    <div class="index-container">
+        <div class="member-cancel-booking">
+            <h1>Confirm cancel booking {{.Booking.BookingID}}?</h1>
+            <div class="yes-no">
+            <form method="POST" action="/jh-member-cancel-booking-2">
+                <input type="hidden" name="bookingid" value="{{.Booking.BookingID}}">
+                <input type="submit" name="cancel" value="yes" class="btn">
+                <input type="submit" name="cancel" value="no" class="btn">
+            </form>
+            </div><!-- .yes-no -->
+    </div> <!-- .index-container -->
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

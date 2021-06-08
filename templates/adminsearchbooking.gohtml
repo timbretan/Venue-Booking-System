@@ -1,0 +1,44 @@
+{{template "header"}}
+<body>
+{{template "adminheader" .}}
+    <div class="index-container">
+        <div class="admin-main-opener">
+            
+            <h1>Booking Search</h1>
+            <form method="POST" class="booking-search-form">
+                <input type="text" id="booking-search" name="bookingid" placeholder="BookingID" 
+                    required pattern="[A-Za-z]{6}[ ]?"  title="Must contain exactly 6 letters">
+                <input type="submit" value="Search" class="btn side-btn">
+            </form>
+            
+            {{- if (avail "Booking" .)}}
+                {{if .Booking}}
+                <h3>{{.Booking.BookingID}} - {{.Booking.Status}}</h3> 
+                <p class="booking">{{.Booking}}</p>
+                {{if (isnotcancelled .Booking.Status)}}
+                <div class="edit-or-cancel">
+                    <form method="POST" action="/jh-admin-edit-booking">
+                        <input type="hidden" name="bookingid" value="{{.Booking.BookingID}}">
+                        <input type="submit" name="prepare-edit" value="Edit Booking" class="btn side-btn">
+                    </form>
+                    {{if (ispending .Booking.Status)}}
+                    <form method="POST" action="/jh-admin-reject-booking">
+                        <input type="hidden" name="bookingid" value="{{.Booking.BookingID}}">
+                        <input type="submit" name="prepare-reject" value="Reject Booking" class="btn side-btn">
+                    </form>
+                    {{end}}
+                    <form method="POST" action="/jh-admin-cancel-booking">
+                        <input type="hidden" name="bookingid" value="{{.Booking.BookingID}}">
+                        <input type="submit" name="prepare-cancel" value="Cancel Booking" class="btn side-btn">
+                    </form>
+                </div> <!-- .edit-or-cancel -->
+                {{end}}
+                {{end}}
+            {{end}}
+        </div> <!-- .admin-main-opener-->
+    </div> <!-- .index-container-->
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

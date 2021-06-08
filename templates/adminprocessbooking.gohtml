@@ -1,0 +1,101 @@
+{{template "header"}}
+<body>
+{{template "adminheader" .}}
+    <div class="index-container">
+        <div class="admin-process-booking">
+        {{- if (avail "Bookings" .)}}
+            {{if .Bookings}}
+                <h2>Bookings to {{.Venue.Name}} processed. Results:</h2>
+                <div class="bookings">
+                {{range .Bookings.Bookings}}
+                <h3>{{.BookingID}} - {{.Status}}</h3> 
+                <p class="booking">{{.Booking}}</p>
+                {{end}}
+                </div> <!-- .bookings -->
+            {{else}}
+                <h2>No bookings to {{.Venue.Name}} to process.</h2>
+            {{end}}
+        {{end}}
+        {{- if (avail "Venue" .)}}
+            <h2>{{.Venue.Name}}</h2>
+            <p>{{(br .Venue.String)}}</p>
+
+            {{- if .Venue.TimesBooked }}
+            <h2>Times Already Booked:</h2>
+            <ul class="time-list">
+            {{range $ab := .Venue.ApprovedBookings}}
+                <li>{{$ab.StartTime.Format "02-01-2006 (Mon) 15:04"}} - {{$ab.EndTime.Format "02-01-2006 (Mon) 15:04"}}</li>
+            {{end}}
+            </ul>
+            {{end}}
+
+            {{- if .Venue.ApprovedBookings}}
+            <h3>Approved Bookings</h3>
+            <div class="bookings">
+            {{range .Venue.ApprovedBookings}}
+                <h3>{{.BookingID}} - {{.Status}}</h3> 
+                <p class="booking">{{.Booking}}</p>
+                <div class="edit-or-cancel">
+                <form method="POST" action="/jh-admin-edit-booking">
+                <input type="hidden" name="bookingid" value="{{.BookingID}}">
+                <input type="submit" name="prepare-edit" value="Edit Booking" class="btn side-btn">
+                </form>
+                <form method="POST" action="/jh-admin-reject-booking">
+                    <input type="hidden" name="bookingid" value="{{.BookingID}}">
+                    <input type="submit" name="prepare-reject" value="Reject Booking" class="btn side-btn">
+                </form>
+                <form method="POST" action="/jh-admin-cancel-booking">
+                <input type="hidden" name="bookingid" value="{{.BookingID}}">
+                <input type="submit" name="prepare-cancel" value="Cancel Booking" class="btn side-btn">
+                </form>
+                </div>
+                <hr/>
+            {{end}}
+            </div> <!-- .bookings -->
+            {{end}}
+
+            <h2>Waitlist of {{.Venue.Name}}</h2>
+            {{- if .Venue.Waitlist.Bookings}}
+                <div class="ask-process-waitlist">
+                    <p>Process waitlist of {{.Venue.Name}}?</p>
+                    <form method="POST" action="/jh-admin/process-2" class="yes-no">
+                        <input type="hidden" name="venue" value="{{.Venue.Name}}">
+                        <input type="submit" name="process" value="yes" class="btn">
+                        <input type="submit" name="process" value="no" class="btn">
+                    </form>
+                </div> <!-- .ask-process-waitlist -->
+                <div class="bookings">
+                <p>Or individually review bookings of {{.Venue.Name}}:</p>
+                <!-- for front of venue.Waitlist -->
+                {{range .Venue.Waitlist.Bookings}}
+                    <h3>{{.BookingID}} - {{.Status}}</h3> 
+                    <p class="booking">{{.Booking}}</p>
+                    <div class="edit-or-cancel">
+                    <form method="POST" action="/jh-admin-edit-booking">
+                    <input type="hidden" name="bookingid" value="{{.BookingID}}">
+                    <input type="submit" name="prepare-edit" value="Edit" class="btn side-btn">
+                    </form>
+                    <form method="POST" action="/jh-admin-reject-booking">
+                        <input type="hidden" name="bookingid" value="{{.BookingID}}">
+                        <input type="submit" name="prepare-reject" value="Reject" class="btn side-btn">
+                    </form>
+                    <form method="POST" action="/jh-admin-cancel-booking">
+                    <input type="hidden" name="bookingid" value="{{.BookingID}}">
+                    <input type="submit" name="prepare-cancel" value="Cancel" class="btn side-btn">
+                    </form>
+                    </div>
+                    <hr/>
+                {{end}} 
+                </div> <!-- .bookings -->
+                
+            {{else}} <!-- empty waitlist -->
+            <p>Waitlist is empty</p>
+            {{end}}
+        {{end}}
+        </div> <!-- .admin-process-booking -->
+    </div> <!-- .index-container -->
+</div> <!-- wrapper class -->
+{{template "footer"}}
+<link href="../../css/style.css" type="text/css" rel="stylesheet">
+</body>
+</html>

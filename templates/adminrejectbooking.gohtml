@@ -1,0 +1,19 @@
+{{template "header"}}
+<body>
+{{template "adminheader" .}}
+    <div class="index-container">
+        <div class="admin-reject-booking">
+            <h1>Confirm reject booking {{.Booking.BookingID}}?</h1>
+            <div class="yes-no">
+            <form method="POST" action="/jh-admin-reject-booking-2">
+                <input type="hidden" name="bookingid" value="{{.Booking.BookingID}}">
+                <input type="submit" name="reject" value="yes" class="btn">
+                <input type="submit" name="reject" value="no" class="btn">
+            </form>
+            </div><!-- .yes-no -->
+    </div> <!-- .index-container -->
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

@@ -1,0 +1,39 @@
+{{template "header"}}
+<body>
+{{template "adminheader" .}}
+    <div class="index-container">
+        <div class="admin-main-opener">
+        {{if (avail "Admin" .)}}
+            <h1>Welcome, {{.Admin.FirstName}} {{.Admin.LastName}}! Start processing bookings now!</h1>
+            {{else}}
+            <h1>Welcome, {{.FirstName}} {{.LastName}}! Start processing bookings now!</h1>
+            {{end}}
+        {{template "venuesearchform"}}
+        <br/>
+        {{if (avail "Venues" .)}}
+            <div class="venue-search-results">
+                {{if .GotVenue}}
+                <p>We found the venue for you:</p>
+                <ul class="venue-search-list">
+                    {{range $element := .Venues}}
+                    <li><a href="/jh-admin/process/{{(makelink $element)}}">{{$element}}</a></li> 
+                    {{end}}
+                </ul>
+                {{else}}
+                <p>We find similar matches to your query:</p>
+                <ul class="venue-search-list">
+                    {{range $element := .Venues}}
+                    <li><a href="/jh-admin/process/{{(makelink $element)}}">{{$element}}</a></li>
+                    {{end}}
+                </ul>
+                <p>No results? Shorten your search term.</p>
+                {{end}}
+            </div> <!-- .venue-search-results -->
+        {{end}}
+        </div> <!-- .admin-main-opener -->
+    </div> <!-- .index-container-->
+</div> <!-- wrapper class -->
+{{template "footer"}}
+{{template "linktocss"}}
+</body>
+</html>

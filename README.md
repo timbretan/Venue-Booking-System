@@ -1,1 +1,3 @@
-# Venue-Booking-System
+# Venue Booking System
+
+A mock booking system for an assignment.
